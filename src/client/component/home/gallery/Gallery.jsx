@@ -2,7 +2,7 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-
+import { baseApi } from "../../../../environment";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
 
@@ -26,7 +26,7 @@ export default function Gallery() {
   };
   React.useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/school/all`)
+      .get(`${baseApi}/school/all`)
 
       .then((resp) => {
         setSchools(resp.data.schools);
