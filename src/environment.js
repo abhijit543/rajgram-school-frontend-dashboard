@@ -1,2 +1,2 @@
-const baseApi = "https://backedn-rajgram-school-dashboard.vercel.app/api";
+const baseApi = import.meta.env.VITE_API_URL;
 export { baseApi };
