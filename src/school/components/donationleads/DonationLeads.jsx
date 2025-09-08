@@ -15,7 +15,7 @@ export default function DonationLeads() {
     const user = JSON.parse(localStorage.getItem("user"));
     const userId = user?.id;
 
-    if (userId === "687f3c04ab8006168de7596e") {
+    if (userId === "68beb423eb092af8a962b6be") {
       setIsAuthorized(true);
     } else {
       toast.error("You are not authorized to view this page.");
