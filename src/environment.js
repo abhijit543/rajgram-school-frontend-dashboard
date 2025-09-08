@@ -1,2 +1,2 @@
-const baseApi = "http://localhost:5000/api";
+const baseApi = "https://backedn-rajgram-school-dashboard.vercel.app/";
 export { baseApi };
