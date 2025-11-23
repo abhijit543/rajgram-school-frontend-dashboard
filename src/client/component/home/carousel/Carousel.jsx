@@ -17,22 +17,23 @@ const carouselItem = [
   },
 ];
 export default function Carousel() {
+   const totalSlides = carouselItem.length;
   const [activeIndex, setActiveIndex] = useState(0);
   const handleNext =useCallback(()=>{
     setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItem.length);
-  },[])
+  },[totalSlides])
     
 
   const handleBack = useCallback(()=>{
    setActiveIndex((prevIndex) => (prevIndex === 0 ? carouselItem.length - 1 : prevIndex - 1));
-  }, []) 
+  }, [totalSlides]) 
 
   return (
     <Box sx={{ position: "relative", width: "100%" }}>
       <SwipeableViews index={activeIndex} onChangeIndex={(index) => setActiveIndex(index)}>
         {carouselItem.map((item, index) => (
           <Box key={index} sx={{ position: "relative", textAlign: "center", color: "white" }}>
-            <img src={item.image} alt={item.title} style={{ width: "100%", height: "70vh", minHeight: "400px", objectFit: "cover" }} />
+            <Box component="img" src={item.image} alt={item.title} style={{ width: "100%", height: "70vh", minHeight: "400px", objectFit: "cover" }} />
             <Box
               sx={{
                 position: "absolute",
