@@ -18,12 +18,14 @@ const carouselItem = [
 ];
 export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const handleNext = () => {
+  const handleNext =useCallback(()=>{
     setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItem.length);
-  };
-  const handleBack = () => {
-    setActiveIndex((prevIndex) => (prevIndex === 0 ? carouselItem.length - 1 : prevIndex - 1));
-  };
+  },[setActiveIndex])
+    
+
+  const handleBack = useCallback(()=>{
+   setActiveIndex((prevIndex) => (prevIndex === 0 ? carouselItem.length - 1 : prevIndex - 1));
+  }, [setActiveIndex]) 
 
   return (
     <Box sx={{ position: "relative", width: "100%" }}>
